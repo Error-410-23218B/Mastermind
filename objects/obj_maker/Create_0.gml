@@ -1,14 +1,21 @@
+audio_play_sound(button,2,false);
+audio_play_sound(Tetris,1,true);
 COLOURS = ["blue","brown","green","red","orange","yellow","pink","purple","brown","grey"]
 
 global.attempts = 0;
 global.slots_filled = 0;
 global.filled = false;
 global.codeSent = [];
-
+global.is_breaker = false;
 
 //Server IP and port, needed to send packets
 remote_ip = "127.0.0.1";
 remote_port = 8000;
+
+if(global.network_is_server){
+remote_port = 8001;
+}
+
 
 obj_slots = [];
  slot_count = 4;

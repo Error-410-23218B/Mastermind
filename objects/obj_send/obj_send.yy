@@ -12,7 +12,10 @@
     "name":"Mastermind",
     "path":"Mastermind.yyp",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"obj_button",
+    "path":"objects/obj_button/obj_button.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,

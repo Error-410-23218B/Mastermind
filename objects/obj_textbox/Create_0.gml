@@ -1,4 +1,5 @@
 global.ip_address = "";
+global.ip_entered = false;
 message = "";
 limit = 20;
 entered = false;

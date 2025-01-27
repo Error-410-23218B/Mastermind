@@ -8,5 +8,6 @@ if (dragging) {
 if (global.slots_filled == 4){
 	global.slots_filled = 0;
 	global.attempts++;
+	audio_play_sound(explosion,3,false,5);
 	show_debug_message(global.attempts);
 }

@@ -43,20 +43,25 @@ for (var i = 0; i < row_count - 1; i++) { // Loop through rows, excluding the la
 		
 		if(arrEqual(row_colour,code)){
 
-		var bufferCon = buffer_create(256, buffer_fixed, 1);
+		var bufferCon = buffer_create(256, buffer_grow, 1);
 
-// Step 3: Write the serialized data to the buffer
-buffer_write(bufferCon, buffer_u8, 1);
+
+buffer_write(bufferCon, buffer_string, "Won");
 
 network_send_udp(global.socket,global.ip_address,remote_port,bufferCon,buffer_tell(bufferCon));
-
-		room_goto(Room2);
+room_goto(Room2);
+		
 		return;
 		}
 	 
 		 
         if (global.attempts >= 10) {
-            show_debug_message("Max attempts reached! Transitioning to the failure room.");
+		var bufferCon = buffer_create(256, buffer_grow, 1);
+
+
+buffer_write(bufferCon, buffer_string, "Lost");
+
+network_send_udp(global.socket,global.ip_address,remote_port,bufferCon,buffer_tell(bufferCon));
             room_goto(Room3); // Go to failure room if max attempts reached
             return;
         }

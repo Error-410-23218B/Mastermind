@@ -10,6 +10,7 @@ dragging = false;
             closest_slot.occupied = true;   
             closest_slot.occupant = string_delete(object_get_name(object_index),1,4);   
 			inSlot = true;
+			audio_play_sound(button_click,3,false,3);
 			global.slots_filled++;
 			
 			

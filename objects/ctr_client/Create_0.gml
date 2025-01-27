@@ -3,7 +3,7 @@ show_debug_message("created")
 global.sendCode = false;
 role = ""
 
-global.socket = network_create_socket(network_socket_udp);//no port since the client doesn’t care
+global.socket = network_create_socket_ext(network_socket_udp,8001);
 //Server IP and port, needed to send packets
 
 remote_port = 8000;
